@@ -556,3 +556,11 @@ ul.credits strong {
   font-weight: bold;
   font-style: normal;
 }
+
+
+/* fix block images aspect ratio bug */
+
+.wp-block-image img, .wp-block-image svg {
+	max-width:100%;
+	height:auto;
+}
