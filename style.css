@@ -1,0 +1,559 @@
+/*
+Theme Name: Warum ich hier bin Theme
+Author: Florian Geierstanger
+Description: based on https://github.com/tidythemes/blankslate
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  /* margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline */
+}
+
+body {
+  line-height: 1;
+}
+
+button {
+  outline: 0;
+}
+
+/* ol,
+ul {
+  list-style: none
+} */
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+q {
+  display: inline;
+  font-style: italic;
+}
+
+q:before {
+  content: '"';
+  font-style: normal;
+}
+
+q:after {
+  content: '"';
+  font-style: normal;
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="search"],
+input[type="password"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 2px;
+}
+
+big {
+  font-size: 120%;
+}
+
+small,
+sup,
+sub {
+  font-size: 80%;
+}
+
+sup {
+  vertical-align: super;
+}
+
+sub {
+  vertical-align: sub;
+}
+
+dd {
+  margin-left: 20px;
+}
+
+kbd,
+tt {
+  font-family: courier;
+  font-size: 12px;
+}
+
+ins {
+  text-decoration: underline;
+}
+
+del,
+strike,
+s {
+  text-decoration: line-through;
+}
+
+dt {
+  font-weight: bold;
+}
+
+address,
+cite,
+var {
+  font-style: italic;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+
+/* --------- css variables   */
+
+:root {
+  --color-primary: #08c8cb;
+  --color-secondary: #fcee21;
+  /* --font-copy: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif; */
+  --font-copy: "Red Hat Text", sans-serif;
+  /* --font-title: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+  --gap: 1em;
+}
+
+/* --------- typography  */
+
+.wrapper {
+  font-family: var(--font-copy);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (min-width: 700px) {
+  .wrapper {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px dotted var(--color-primary);
+}
+
+a:hover {
+  border-bottom: 2px solid var(--color-primary);
+}
+
+p {
+  /* margin-bottom: 1em; */
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+h1 {
+  color: var(--color-primary);
+}
+
+h2 {
+  text-align: center;
+  font-size: 110%;
+  margin-top: 3em;
+  margin-bottom: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.entry-title {
+  font-size: 2.25em;
+}
+
+.wp-block-separator {
+  /* background-color: #767676;
+  border: 0;
+  height: 2px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  max-width: 2.25em;
+  text-align: left;
+  margin: 32px 0; */
+  display: none;
+}
+
+/* --------- layout  */
+body {
+  margin: 0;
+}
+
+.entry-content {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+}
+
+.entry-content > * {
+  grid-column: 2 / -2;
+  padding: 1em 1em 0 1em;
+}
+
+.entry-content > .videoplayer--fullwidth {
+  background-color: var(--color-primary);
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 1300px) 1fr;
+}
+
+@media (min-width: 800px) {
+  .entry-content > .videoplayer--fullwidth > iframe {
+    padding: 1em;
+    grid-column: 2 / -2;
+  }
+}
+
+/* --------- components  */
+
+/* ------------------ video player  755x424 */
+/*  add wordpress blocks classes:  wp-embed-aspect-16-9 wp-has-aspect-ratio  */
+.videoplayer iframe {
+  width: 900px;
+  height: 505px;
+  max-width: 100%;
+  max-height: calc((100vw - 40px) / (16 / 9));
+}
+
+/* ---------  hide h1 on frontpage  */
+.frontpage_title,
+.home h1.entry-title {
+  display: none;
+}
+
+/* ---------  CTA buttons  */
+
+.button--cta > a {
+  font-size: 1.8em;
+}
+
+/* ---------  lead  */
+
+p.lead:first-letter {
+  float: left;
+  font-size: 3em;
+  line-height: 0.8;
+  font-weight: 100;
+  margin: 0.05em 0.1em 0 0;
+  text-transform: uppercase;
+  font-style: normal;
+  color: var(--color-primary);
+}
+
+@media (min-width: 800px) {
+  p.lead {
+    font-size: 140%;
+    line-height: 1.6;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  p.lead {
+    font-size: 160%;
+    line-height: 1.7;
+  }
+
+  p.lead:first-letter {
+    font-size: 5em;
+  }
+}
+
+/* ---------  story  */
+
+.story.wp-block-columns {
+  flex-wrap: wrap;
+}
+
+.story > .wp-block-column {
+  flex-basis: auto;
+  /* border: 1px solid red; */
+}
+
+@media (min-width: 800px) {
+  .story > .wp-block-column {
+    flex: 1 1 0;
+  }
+
+  .story:not(.flipped) > .wp-block-column:nth-of-type(1) {
+    flex: 1 1 0;
+    text-align: right;
+  }
+
+  .story > .wp-block-column:nth-of-type(2) {
+    flex: 4 1 0;
+  }
+
+  .story.flipped > .wp-block-column:nth-of-type(1) {
+    flex: 1 1 0;
+    order: 2;
+  }
+
+  .story.flipped > .wp-block-column:nth-of-type(2) {
+    flex: 4 1 0;
+    order: 1;
+    margin-left: 0;
+    margin-right: 32px;
+  }
+}
+
+.story .wp-block-image {
+  display: grid;
+  margin: 0;
+}
+
+.story .wp-block-image img {
+  justify-self: center;
+}
+
+@media (min-width: 800px) {
+  .story .wp-block-image {
+    display: unset;
+    /* margin: unset; */
+  }
+
+  .story .wp-block-image img {
+    justify-self: normal;
+  }
+}
+
+/* ---------  credits  */
+
+ul.credits,
+ul.credits ul {
+  /* padding-left: inherit; */
+  list-style: none;
+  display: inline;
+}
+
+ul.credits ul {
+  padding-left: 0;
+}
+
+ul.credits li {
+  display: inline;
+  margin-right: 0.7em;
+}
+
+ul.credits strong {
+  /* font-weight: inherit; */
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  font-size: 60%;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+}
+
+.blockquote--large > p {
+  font-size: 180%;
+  line-height: 1.8;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-block-column .wp-block-button {
+  margin-block-end: 1em;
+}
+
+#sidebar {
+  background: var(--color-primary);
+  color: white;
+  display: grid;
+  grid-auto-flow: column;
+  padding: calc(var(--gap) * 2);
+  padding-bottom: calc(var(--gap) * 4);
+}
+
+#sidebar > div {
+  justify-self: center;
+}
+
+#sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  display: inline;
+}
+
+#sidebar li {
+  display: inline;
+  padding-right: var(--gap);
+}
+
+#sidebar div {
+  display: inline;
+}
+
+/* ---------  speech bubble  */
+
+.quote-bubble > p {
+  padding: 1em;
+  position: relative;
+  border: 3px solid #08c8cb;
+}
+
+@media (min-width: 800px) {
+  .quote-bubble > p {
+    font-size: 130%;
+  }
+}
+
+.quote-bubble > p::after {
+  content: url("data:image/svg+xml; utf8, <svg width='36' height='35' viewBox='0 0 36 35' fill='white' xmlns='http://www.w3.org/2000/svg'><path d='M3.00684 1.49023H33.0068' stroke='white' stroke-width='4'/><path d='M1.56152 1.49023L8.42899 31.4902L35.176 1.49023' stroke='%2308C8CB' stroke-width='3'/></svg>");
+  position: absolute;
+  bottom: -42px;
+  left: 23%;
+}
+
+@media (min-width: 800px) {
+  .quote-bubble > p::after {
+    bottom: -44px;
+  }
+}
+
+[dir="rtl"] .quote-bubble > p::after {
+  right: 23%;
+}
+
+.quote-bubble > cite {
+  margin-top: 39px;
+  display: block;
+  padding-inline-start: calc(23% - 3em);
+  color: var(--color-primary);
+  font-weight: bold;
+  font-style: normal;
+}
