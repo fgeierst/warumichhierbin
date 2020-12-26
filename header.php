@@ -4,7 +4,13 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>" />
   <meta name="viewport" content="width=device-width" />
+
+  <link rel="preconnect" href="https://player.vimeo.com">
+  <link rel="preconnect" href="https://i.vimeocdn.com">
+  <link rel="preconnect" href="https://f.vimeocdn.com">
+
   <?php wp_head(); ?>
+
   <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/fonts/red-hat-text-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/fonts/red-hat-text-700.woff2" as="font" type="font/woff2" crossorigin>
   <style>
