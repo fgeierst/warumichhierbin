@@ -49,12 +49,14 @@ if ( ! is_admin() ) {
 global $post;
 return ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="more-link">...</a>';
 }
-}
-add_filter( 'intermediate_image_sizes_advanced', 'wihb_image_insert_override' );
-function wihb_image_insert_override( $sizes ) {
-unset( $sizes['medium_large'] );
-return $sizes;
-}
+} 
+
+// add_filter( 'intermediate_image_sizes_advanced', 'wihb_image_insert_override' );
+// function wihb_image_insert_override( $sizes ) {
+// unset( $sizes['medium_large'] );
+// return $sizes;
+// }
+
 add_action( 'widgets_init', 'wihb_widgets_init' );
 function wihb_widgets_init() {
 register_sidebar( array(
