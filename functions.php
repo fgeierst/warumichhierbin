@@ -133,3 +133,17 @@ add_filter(
     'statify__user_can_see_stats',
     current_user_can('edit_others_pages' )
 );
+
+/* Load properly size images by adding more media conditions / slot sizes
+	 https://www.smashingmagazine.com/2015/12/responsive-images-in-wordpress-core/ 
+	 Set $sizes corresponding to your settings in /wp-admin/options-media.php
+	 Note that medium_large (768px) is available, but not displayed in options-media.php
+	 Example: $sizes = '(max-width: 500px) 500px, (max-width: 768px) 768px, 1024px';
+
+*/
+
+function adjust_image_sizes_attr( $sizes, $size ) {
+	$sizes = '(max-width: 500px) 500px, (max-width: 768px) 768px, 1024px';
+	return $sizes;
+}
+add_filter( 'wp_calculate_image_sizes', 'adjust_image_sizes_attr', 10 , 2 );
